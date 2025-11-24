@@ -1,0 +1,29 @@
+{
+  "title": {
+    "locales": {
+      "en": {
+        "title_short": "Projects",
+        "title_short_nav": "Projects"
+      }
+    }
+  },
+  "articles": 
+    {
+      "id": "project-portfolio",
+      "title": "Personal Portfolio",
+      "subtitle": "React • Vite",
+      "description": "A personal portfolio template showcasing projects, blog posts and contact details.",
+      "technologies": ["React", "Vite", "CSS"],
+      "links": [
+        { "label": "Live", "url": "https://example.com" },
+        { "label": "Source", "url": "https://github.com/username/repo" }
+      ],
+      "imageUrl": "images/pictures/project-portfolio.png"
+    },
+    
+      "id": "project-chat",
+      "title": "Chat App",
+      "subtitle": "Socket.IO • Node",
+      "description": "Real-time chat application with rooms, typing indicators and presence.",
+      "technologies": ["Node.js", "Socket.IO", "Express"]
+}
