@@ -2,7 +2,9 @@
 
 div.audio-button-wrapper {
     display: inline-flex;
-    height: 100%;
+    align-items: center;
+    vertical-align: middle;
+    height: auto;
 }
 
 button.audio-button {
@@ -51,6 +53,7 @@ div.audio-button-wrapper-size-dynamic-for-nav-title {
         position: relative;
         min-width: 1.3rem;
         margin-left: 9px;
+
         @include media-breakpoint-down($max-breakpoint-for-tabbed-interface) {
             margin-left: 10px;
             top: -2px;
@@ -60,6 +63,7 @@ div.audio-button-wrapper-size-dynamic-for-nav-title {
     div.audio-button-tooltip {
         min-width: 180px;
         transform: translate(calc(-50% + 1.2rem), calc(-100% - 0.6rem));
+
         @include media-breakpoint-down($max-breakpoint-for-tabbed-interface) {
             transform: translate(calc(-50% + 1.26rem), calc(-100% - 0.65rem));
         }

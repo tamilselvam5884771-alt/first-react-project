@@ -4,30 +4,48 @@
  */
 
 body {
-    overflow-x: hidden!important;
+    overflow-x: hidden !important;
     touch-action: manipulation;
     width: 100%;
-    background-color: $loader-background;
+    // background-color: $loader-background; // Removed static background
+    background: linear-gradient(-45deg, #000046, #1cb5e0, #000046, #1cb5e0);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh; // Ensure it covers full height
 
     @include media-breakpoint-up($max-breakpoint-for-tabbed-interface) {
-        position: fixed!important;
-        overflow-y: hidden!important;
+        position: fixed !important;
+        overflow-y: hidden !important;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
 
 body.body-theme {
-    background-color: var(--theme-background)!important;
+    // background-color: var(--theme-background)!important; // Removed to allow animated background
 }
 
 body.body-android {
     @include media-breakpoint-up($max-breakpoint-for-tabbed-interface) {
-        position: relative!important;
-        overflow-y: auto!important;
+        position: relative !important;
+        overflow-y: auto !important;
     }
 }
 
 body.body-no-scroll {
-    overflow-y: hidden!important;
+    overflow-y: hidden !important;
 }
 
 /** ------------ SELECTION STYLES ------------ **/
@@ -43,29 +61,67 @@ body.body-no-scroll {
 
 /** ------------ SCROLLBAR STYLES ------------ **/
 .scrollbar-decorator {
-    ::-webkit-scrollbar { max-width: 4px; }
-    ::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 4px var(--theme-scrollbar-track); }
-    ::-webkit-scrollbar-thumb { background-color: var(--theme-scrollbar-thumb)!important; }
+    ::-webkit-scrollbar {
+        max-width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 4px var(--theme-scrollbar-track);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--theme-scrollbar-thumb) !important;
+    }
 }
 
 /** ------------ PLACEHOLDER STYLES ------------ **/
 ::-webkit-input-placeholder {
     color: var(--theme-opacity-border-accent);
 }
+
 *:-moz-placeholder {
-    color: var(--theme-opacity-border-accent)!important;
+    color: var(--theme-opacity-border-accent) !important;
     opacity: 1;
 }
+
 *::-moz-placeholder {
-    color: var(--theme-opacity-border-accent)!important;
+    color: var(--theme-opacity-border-accent) !important;
     opacity: 1;
 }
+
 *:-ms-input-placeholder {
-    color: var(--theme-opacity-border-accent)!important;
+    color: var(--theme-opacity-border-accent) !important;
 }
+
 *::-ms-input-placeholder {
-    color: var(--theme-opacity-border-accent)!important;
+    color: var(--theme-opacity-border-accent) !important;
 }
+
 *::placeholder {
-    color: var(--theme-opacity-border-accent)!important;
+    color: var(--theme-opacity-border-accent) !important;
+}
+
+.cartoon-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.cartoon-character {
+    width: 150px;
+    height: auto;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }

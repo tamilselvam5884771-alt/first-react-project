@@ -4,8 +4,8 @@
  * @description This provider is responsible for loading and providing the data for the application.
  */
 
-import React, {createContext, useContext, useEffect, useState} from 'react'
-import {useUtils} from "/src/hooks/utils.js"
+import React, { createContext, useContext, useEffect, useState } from 'react'
+import { useUtils } from "/src/hooks/utils.js"
 
 function DataProvider({ children, settings }) {
     const utils = useUtils()
@@ -20,10 +20,11 @@ function DataProvider({ children, settings }) {
 
     const [status, setStatus] = useState(DataProviderStatus.STATUS_IDLE)
     const [jsonData, setJsonData] = useState({})
+    const [error, setError] = useState(null)
 
     /** @constructs **/
     useEffect(() => {
-        if(status !== DataProviderStatus.STATUS_IDLE)
+        if (status !== DataProviderStatus.STATUS_IDLE)
             return
 
         setStatus(DataProviderStatus.STATUS_PREPARING_FOR_LOADING)
@@ -31,7 +32,7 @@ function DataProvider({ children, settings }) {
 
     /** @listens DataProviderStatus.STATUS_PREPARING_FOR_LOADING **/
     useEffect(() => {
-        if(status !== DataProviderStatus.STATUS_PREPARING_FOR_LOADING)
+        if (status !== DataProviderStatus.STATUS_PREPARING_FOR_LOADING)
             return
 
         setJsonData({})
@@ -41,22 +42,26 @@ function DataProvider({ children, settings }) {
 
     /** @listens DataProviderStatus.STATUS_LOADING **/
     useEffect(() => {
-        if(status !== DataProviderStatus.STATUS_LOADING)
+        if (status !== DataProviderStatus.STATUS_LOADING)
             return
 
         _loadData().then(response => {
             setJsonData(response)
             setStatus(DataProviderStatus.STATUS_LOADED)
+        }).catch(err => {
+            console.error("DataProvider Error:", err)
+            setError(err.message)
+            utils.log.throwError("DataProvider", err.message)
         })
     }, [status === DataProviderStatus.STATUS_LOADING])
 
     /** @listens DataProviderStatus.STATUS_LOADED **/
     useEffect(() => {
-        if(status !== DataProviderStatus.STATUS_LOADED)
+        if (status !== DataProviderStatus.STATUS_LOADED)
             return
 
         const validation = _validateData()
-        if(!validation.success) {
+        if (!validation.success) {
             utils.log.throwError("DataProvider", validation.message)
             return
         }
@@ -85,14 +90,14 @@ function DataProvider({ children, settings }) {
     }
 
     const _bindCategoriesAndSections = (categories, sections) => {
-        for(const category of categories) {
+        for (const category of categories) {
             category.sections = []
         }
 
-        for(const section of sections) {
+        for (const section of sections) {
             const sectionCategoryId = section["categoryId"]
             const sectionCategory = categories.find(category => category.id === sectionCategoryId)
-            if(!sectionCategory) {
+            if (!sectionCategory) {
                 utils.log.throwError("DataProvider", `Section with id "${section.id}" has invalid category id "${sectionCategoryId}". Make sure the category exists within categories.json`)
                 return
             }
@@ -103,9 +108,9 @@ function DataProvider({ children, settings }) {
     }
 
     const _loadSectionsData = async (sections) => {
-        for(const section of sections) {
+        for (const section of sections) {
             const sectionJsonPath = section.jsonPath
-            if(sectionJsonPath) {
+            if (sectionJsonPath) {
                 let jSectionData = {}
 
                 try {
@@ -122,14 +127,14 @@ function DataProvider({ children, settings }) {
     const _validateData = () => {
         const emptyCategories = jsonData.categories.filter(category => category.sections.length === 0)
         const emptyCategoriesIds = emptyCategories.map(category => category.id)
-        if(emptyCategories.length > 0) {
+        if (emptyCategories.length > 0) {
             return {
                 success: false,
                 message: `The following ${emptyCategories.length} categories are empty: "${emptyCategoriesIds}". Make sure all categories have at least one section.`
             }
         }
 
-        return {success: true}
+        return { success: true }
     }
 
     const getProfile = () => {
@@ -150,6 +155,24 @@ function DataProvider({ children, settings }) {
 
     const getCategories = () => {
         return jsonData?.categories || []
+    }
+
+    if (error) {
+        return (
+            <div style={{
+                position: 'fixed',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                color: 'red',
+                background: 'white',
+                padding: '20px',
+                zIndex: 9999
+            }}>
+                <h1>Data Error</h1>
+                <p>{error}</p>
+            </div>
+        )
     }
 
     return (

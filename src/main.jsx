@@ -1,11 +1,11 @@
 import "/src/styles/app.scss"
-import {StrictMode, useEffect, useState} from 'react'
-import {createRoot} from 'react-dom/client'
-import {useApi} from "/src/hooks/api.js"
-import {useConstants} from "/src/hooks/constants.js"
-import {useUtils} from "/src/hooks/utils.js"
+import { StrictMode, useEffect, useState } from 'react'
+import { createRoot } from 'react-dom/client'
+import { useApi } from "/src/hooks/api.js"
+import { useConstants } from "/src/hooks/constants.js"
+import { useUtils } from "/src/hooks/utils.js"
 import Preloader from "/src/components/loaders/Preloader.jsx"
-import DataProvider, {useData} from "/src/providers/DataProvider.jsx"
+import DataProvider, { useData } from "/src/providers/DataProvider.jsx"
 import LanguageProvider from "/src/providers/LanguageProvider.jsx"
 import ViewportProvider from "/src/providers/ViewportProvider.jsx"
 import ThemeProvider from "/src/providers/ThemeProvider.jsx"
@@ -14,16 +14,21 @@ import FeedbacksProvider from "/src/providers/FeedbacksProvider.jsx"
 import InputProvider from "/src/providers/InputProvider.jsx"
 import NavigationProvider from "/src/providers/NavigationProvider.jsx"
 import Portfolio from "/src/components/Portfolio.jsx"
+import AnimatedBackground from "/src/components/AnimatedBackground.jsx"
+import CartoonCharacter from "/src/components/CartoonCharacter.jsx"
+import PageTransition from "/src/components/PageTransition.jsx"
+import ClickSpark from "/src/components/ClickSpark.jsx"
+import RocketLaunch from "/src/components/RocketLaunch.jsx"
 
 /** Initialization Script... **/
 let container = null
 
-document.addEventListener('DOMContentLoaded', function(event) {
-    if(container)
+document.addEventListener('DOMContentLoaded', function (event) {
+    if (container)
         return
 
     container = document.getElementById('root')
-    createRoot(document.getElementById('root')).render(<App/>)
+    createRoot(document.getElementById('root')).render(<App />)
 })
 
 /**
@@ -33,21 +38,25 @@ document.addEventListener('DOMContentLoaded', function(event) {
  */
 const App = () => {
     return (
-        <AppEssentialsWrapper>
-            <AppCapabilitiesWrapper>
-                <Portfolio/>
-            </AppCapabilitiesWrapper>
-        </AppEssentialsWrapper>
+        <>
+            <AnimatedBackground />
+            <CartoonCharacter />
+            <ClickSpark />
+            <RocketLaunch />
+            <AppEssentialsWrapper>
+                <AppCapabilitiesWrapper>
+                    <Portfolio />
+                </AppCapabilitiesWrapper>
+            </AppEssentialsWrapper>
+        </>
     )
 }
 
 /**
- * This stack will wrap the entire app - these are considered essential components for the app booting up.
- * @param children
  * @return {JSX.Element}
  * @constructor
  */
-const AppEssentialsWrapper = ({children}) => {
+const AppEssentialsWrapper = ({ children }) => {
     const api = useApi()
     const utils = useUtils()
     const constants = useConstants()
@@ -59,17 +68,25 @@ const AppEssentialsWrapper = ({children}) => {
             window.history.pushState({}, '', utils.file.BASE_URL)
 
         utils.file.loadJSON("/data/settings.json").then(response => {
+            if (!response) {
+                console.error("Failed to load settings");
+                setSettings({ error: "Failed to load settings.json" });
+                return;
+            }
             _applyDeveloperSettings(response)
             setSettings(response)
 
             const consoleMessageForDevelopers = response?.consoleMessageForDevelopers
-            if(consoleMessageForDevelopers) {
+            if (consoleMessageForDevelopers) {
                 const primaryColor = utils.css.getRootSCSSVariable('--bs-primary')
                 utils.log.info(consoleMessageForDevelopers.title, consoleMessageForDevelopers.items, primaryColor)
             }
+        }).catch(err => {
+            console.error("Error loading settings:", err);
+            setSettings({ error: err.message });
         })
 
-        api.analytics.reportVisit().then(() => {})
+        api.analytics.reportVisit().then(() => { })
     }, [])
 
     const _applyDeveloperSettings = (settings) => {
@@ -78,25 +95,44 @@ const AppEssentialsWrapper = ({children}) => {
         const fakeEmailRequests = developerSettings?.fakeEmailRequests
         const stayOnThePreloaderScreen = developerSettings?.stayOnThePreloaderScreen
 
-        if(constants.PRODUCTION_MODE)
+        if (constants.PRODUCTION_MODE)
             return settings
 
-        if(debugMode) {
+        if (debugMode) {
             settings.preloaderSettings.enabled = stayOnThePreloaderScreen
             settings.templateSettings.backgroundStyle = "plain"
             utils.storage.setWindowVariable("suspendAnimations", true)
             utils.log.warn("DataProvider", "Debug Mode is enabled, so transitions and animated content—such as the preloader screen, background animations, and role text typing—will be skipped. You can disable it manually on settings.json or by running the app on PROD_MODE, which disables it by default.")
         }
 
-        if(fakeEmailRequests) {
+        if (fakeEmailRequests) {
             utils.storage.setWindowVariable("fakeEmailRequests", true)
             utils.log.warn("DataProvider", "Fake email requests are enabled. This is only for development purposes and will be disabled automatically in production.")
         }
 
-        if(stayOnThePreloaderScreen) {
+        if (stayOnThePreloaderScreen) {
             utils.storage.setWindowVariable("stayOnThePreloaderScreen", true)
             utils.log.warn("DataProvider", "Preloader screen will be displayed indefinitely because the developer flag 'stayOnThePreloaderScreen' is on. This is only for development purposes and will be disabled automatically in production.")
         }
+    }
+
+    if (settings?.error) {
+        return (
+            <div style={{
+                position: 'fixed',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                color: 'red',
+                background: 'white',
+                padding: '20px',
+                zIndex: 9999
+            }}>
+                <h1>Error Loading Application</h1>
+                <p>{settings.error}</p>
+                <p>Please check the console for more details.</p>
+            </div>
+        )
     }
 
     return (
@@ -137,20 +173,21 @@ const AppCapabilitiesWrapper = ({ children }) => {
 
     return (
         <LanguageProvider supportedLanguages={supportedLanguages}
-                          defaultLanguageId={defaultLanguageId}
-                          appStrings={appStrings}
-                          selectedThemeId={selectedThemeId}>
+            defaultLanguageId={defaultLanguageId}
+            appStrings={appStrings}
+            selectedThemeId={selectedThemeId}>
             <ViewportProvider>
                 <InputProvider>
                     <FeedbacksProvider canHaveAnimatedCursor={animatedCursorEnabled}>
                         <ThemeProvider supportedThemes={supportedThemes}
-                                       defaultThemeId={defaultThemeId}
-                                       showSpinnerOnThemeChange={showSpinnerOnThemeChange}
-                                       onThemeChanged={setSelectedThemeId}>
+                            defaultThemeId={defaultThemeId}
+                            showSpinnerOnThemeChange={showSpinnerOnThemeChange}
+                            onThemeChanged={setSelectedThemeId}>
                             <LocationProvider sections={appSections}
-                                              categories={appCategories}>
+                                categories={appCategories}>
                                 <NavigationProvider sections={appSections}
-                                                    categories={appCategories}>
+                                    categories={appCategories}>
+                                    <PageTransition />
                                     {children}
                                 </NavigationProvider>
                             </LocationProvider>

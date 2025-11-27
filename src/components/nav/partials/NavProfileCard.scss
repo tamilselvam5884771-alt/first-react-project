@@ -5,16 +5,29 @@ div.nav-profile-card {
     --border-size: 6px;
     --info-margin-top: 10px;
     --offset-status-circle: 15px;
-    @media(min-height: 760px) {--avatar-size: 150px; --info-margin-top: 11px;}
-    @media(min-height: 800px) {--avatar-size: 155px}
-    @media(max-height: 690px) {--avatar-size: 130px}
-    @media(max-height: 650px) {--avatar-size: 120px}
+
+    @media(min-height: 760px) {
+        --avatar-size: 150px;
+        --info-margin-top: 11px;
+    }
+
+    @media(min-height: 800px) {
+        --avatar-size: 155px
+    }
+
+    @media(max-height: 690px) {
+        --avatar-size: 130px
+    }
+
+    @media(max-height: 650px) {
+        --avatar-size: 120px
+    }
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: transparent!important;
+    background-color: transparent !important;
     position: relative;
     margin: 15px;
 
@@ -34,8 +47,9 @@ div.nav-profile-card {
 
     &-info {
         margin-top: var(--info-margin-top);
-        margin-bottom: 3px;
+        margin-bottom: 2px; // Reduced to pull Role closer
         user-select: none;
+
         @include media-breakpoint-down($max-breakpoint-for-tabbed-interface) {
             margin-top: 14px;
             margin-bottom: 8px;
@@ -47,12 +61,12 @@ div.nav-profile-card {
 
         margin-left: 10px;
         margin-right: 10px;
-        margin-bottom: 4px;
-        font-size: 1.25rem!important;
-        line-height: 1.8rem!important;
+        margin-bottom: 2px; // Reduced to pull Role closer
+        font-size: 1.25rem !important;
+        line-height: 1.8rem !important;
 
         @include media-breakpoint-down($max-breakpoint-for-tabbed-interface) {
-            font-size: 1.5rem!important;
+            font-size: 1.5rem !important;
             margin-bottom: 7px;
         }
     }
@@ -71,6 +85,7 @@ div.nav-profile-card {
         color: var(--theme-secondary);
         font-size: 0.9rem;
         min-height: 25px;
+
         @include media-breakpoint-down($max-breakpoint-for-tabbed-interface) {
             font-size: 0.95rem;
             min-height: 25px;
@@ -84,7 +99,7 @@ div.nav-profile-card-shrink {
     --offset-status-circle: 12px;
 
     div.nav-profile-card-avatar {
-        border-radius: calc($standard-border-radius * 2)!important;
+        border-radius: calc($standard-border-radius * 2) !important;
     }
 
     div.nav-profile-card-info {
