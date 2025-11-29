@@ -44,11 +44,7 @@
                         "fill": "#0295c2",
                         "fillLight": "#007396"
                     },
-                    "date": {
-                        "year": 2019,
-                        "month": 10
-                    },
-                    "percentage": 95,
+                    "percentage": 25,
                     "locales": {
                         "en": {
                             "title": "Java",
@@ -70,11 +66,7 @@
                         "bg": "",
                         "fill": "#306998"
                     },
-                    "date": {
-                        "year": 2020,
-                        "month": 6
-                    },
-                    "percentage": 85,
+                    "percentage": 25,
                     "locales": {
                         "en": {
                             "title": "Python",
@@ -96,11 +88,7 @@
                         "bg": "",
                         "fill": "#00599C"
                     },
-                    "date": {
-                        "year": 2018,
-                        "month": 1
-                    },
-                    "percentage": 80,
+                    "percentage": 25,
                     "locales": {
                         "en": {
                             "title": "C++",
@@ -143,11 +131,7 @@
                         "bg": "",
                         "fill": "#E34F26"
                     },
-                    "date": {
-                        "year": 2018,
-                        "month": 9
-                    },
-                    "percentage": 100,
+                    "percentage": 90,
                     "locales": {
                         "en": {
                             "title": "HTML 5",
@@ -169,11 +153,7 @@
                         "bg": "",
                         "fill": "#1572B6"
                     },
-                    "date": {
-                        "year": 2019,
-                        "month": 1
-                    },
-                    "percentage": 90,
+                    "percentage": 75,
                     "locales": {
                         "en": {
                             "title": "CSS 3",
@@ -196,11 +176,7 @@
                         "fill": "#F7DF1E",
                         "fillLight": "#a69617"
                     },
-                    "date": {
-                        "year": 2020,
-                        "month": 3
-                    },
-                    "percentage": 95,
+                    "percentage": 50,
                     "locales": {
                         "en": {
                             "title": "JavaScript",
@@ -223,11 +199,7 @@
                         "fill": "#61DAFB",
                         "fillLight": "#317385"
                     },
-                    "date": {
-                        "year": 2020,
-                        "month": 6
-                    },
-                    "percentage": 90,
+                    "percentage": 25,
                     "locales": {
                         "en": {
                             "title": "React JS",
@@ -270,11 +242,7 @@
                         "bg": "",
                         "fill": "#47A248"
                     },
-                    "date": {
-                        "year": 2024,
-                        "month": 5
-                    },
-                    "percentage": 75,
+                    "percentage": 25,
                     "locales": {
                         "en": {
                             "title": "MongoDB",

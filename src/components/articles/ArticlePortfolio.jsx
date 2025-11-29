@@ -1,13 +1,15 @@
 import "./ArticlePortfolio.scss"
-import React, {useEffect, useState} from 'react'
+import "/src/styles/innovative-animations.scss"
+import React, { useEffect, useState, useRef } from 'react'
 import Article from "/src/components/articles/base/Article.jsx"
 import Transitionable from "/src/components/capabilities/Transitionable.jsx"
-import {useViewport} from "/src/providers/ViewportProvider.jsx"
-import {useConstants} from "/src/hooks/constants.js"
+import { useViewport } from "/src/providers/ViewportProvider.jsx"
+import { useConstants } from "/src/hooks/constants.js"
 import AvatarView from "/src/components/generic/AvatarView.jsx"
-import {Tag, Tags} from "/src/components/generic/Tags.jsx"
+import { Tag, Tags } from "/src/components/generic/Tags.jsx"
 import ArticleItemPreviewMenu from "/src/components/articles/partials/ArticleItemPreviewMenu.jsx"
-import {useLanguage} from "/src/providers/LanguageProvider.jsx"
+import { useLanguage } from "/src/providers/LanguageProvider.jsx"
+
 
 /**
  * @param {ArticleDataWrapper} dataWrapper
@@ -20,13 +22,13 @@ function ArticlePortfolio({ dataWrapper, id }) {
 
     return (
         <Article id={dataWrapper.uniqueId}
-                 type={Article.Types.SPACING_DEFAULT}
-                 dataWrapper={dataWrapper}
-                 className={`article-portfolio`}
-                 selectedItemCategoryId={selectedItemCategoryId}
-                 setSelectedItemCategoryId={setSelectedItemCategoryId}>
+            type={Article.Types.SPACING_DEFAULT}
+            dataWrapper={dataWrapper}
+            className={`article-portfolio`}
+            selectedItemCategoryId={selectedItemCategoryId}
+            setSelectedItemCategoryId={setSelectedItemCategoryId}>
             <ArticlePortfolioItems dataWrapper={dataWrapper}
-                                   selectedItemCategoryId={selectedItemCategoryId}/>
+                selectedItemCategoryId={selectedItemCategoryId} />
         </Article>
     )
 }
@@ -52,16 +54,16 @@ function ArticlePortfolioItems({ dataWrapper, selectedItemCategoryId }) {
         selectedItemCategoryId + "-" + language.getSelectedLanguage()?.id :
         language.getSelectedLanguage()?.id
 
-    if(dataWrapper.categories?.length) {
+    if (dataWrapper.categories?.length) {
         return (
             <Transitionable id={dataWrapper.uniqueId}
-                            refreshFlag={refreshFlag}
-                            delayBetweenItems={100}
-                            animation={Transitionable.Animations.POP}
-                            className={`article-portfolio-items ${itemsPerRowClass}`}>
+                refreshFlag={refreshFlag}
+                delayBetweenItems={100}
+                animation={Transitionable.Animations.POP}
+                className={`article-portfolio-items ${itemsPerRowClass}`}>
                 {filteredItems.map((itemWrapper, key) => (
                     <ArticlePortfolioItem itemWrapper={itemWrapper}
-                                          key={key}/>
+                        key={key} />
                 ))}
             </Transitionable>
         )
@@ -71,7 +73,7 @@ function ArticlePortfolioItems({ dataWrapper, selectedItemCategoryId }) {
             <div className={`article-portfolio-items ${itemsPerRowClass} mb-3 mb-lg-2`}>
                 {filteredItems.map((itemWrapper, key) => (
                     <ArticlePortfolioItem itemWrapper={itemWrapper}
-                                          key={key}/>
+                        key={key} />
                 ))}
             </div>
         )
@@ -84,17 +86,63 @@ function ArticlePortfolioItems({ dataWrapper, selectedItemCategoryId }) {
  * @constructor
  */
 function ArticlePortfolioItem({ itemWrapper }) {
-    return (
-        <div className={`article-portfolio-item`}>
-            <AvatarView src={itemWrapper.img}
-                        faIcon={itemWrapper.faIcon}
-                        style={itemWrapper.faIconStyle}
-                        alt={itemWrapper.imageAlt}
-                        className={`article-portfolio-item-avatar`}/>
+    const cardRef = useRef(null)
 
-            <ArticlePortfolioItemTitle itemWrapper={itemWrapper}/>
-            <ArticlePortfolioItemBody itemWrapper={itemWrapper}/>
-            <ArticlePortfolioItemFooter itemWrapper={itemWrapper}/>
+    const handleMouseMove = (e) => {
+        if (!cardRef.current) return
+
+        const card = cardRef.current
+        const rect = card.getBoundingClientRect()
+        const x = e.clientX - rect.left
+        const y = e.clientY - rect.top
+
+        // Spotlight effect
+        card.style.setProperty('--mouse-x', `${x}px`)
+        card.style.setProperty('--mouse-y', `${y}px`)
+
+        // 3D Tilt effect
+        const centerX = rect.width / 2
+        const centerY = rect.height / 2
+        const rotateX = ((y - centerY) / centerY) * -5 // Max 5deg rotation
+        const rotateY = ((x - centerX) / centerX) * 5
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`
+    }
+
+    const handleMouseLeave = () => {
+        if (!cardRef.current) return
+        cardRef.current.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)'
+    }
+
+    return (
+        <div className={`article-portfolio-item`}
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ transition: 'transform 0.1s ease-out' }}>
+
+            {/* Innovative Animation: Spotlight Overlay */}
+            <div className="spotlight-overlay" style={{
+                position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+                background: 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255,255,255,0.1) 0%, transparent 80%)',
+                pointerEvents: 'none', opacity: 0, transition: 'opacity 0.3s', zIndex: 2
+            }}></div>
+
+            <style>{`
+                .article-portfolio-item:hover .spotlight-overlay {
+                    opacity: 1 !important;
+                }
+            `}</style>
+
+            <AvatarView src={itemWrapper.img}
+                faIcon={itemWrapper.faIcon}
+                style={itemWrapper.faIconStyle}
+                alt={itemWrapper.imageAlt}
+                className={`article-portfolio-item-avatar`} />
+
+            <ArticlePortfolioItemTitle itemWrapper={itemWrapper} />
+            <ArticlePortfolioItemBody itemWrapper={itemWrapper} />
+            <ArticlePortfolioItemFooter itemWrapper={itemWrapper} />
         </div>
     )
 }
@@ -108,10 +156,10 @@ function ArticlePortfolioItemTitle({ itemWrapper }) {
     return (
         <div className={`article-portfolio-item-title`}>
             <h5 className={`article-portfolio-item-title-main`}
-                dangerouslySetInnerHTML={{__html: itemWrapper.locales.title || itemWrapper.placeholder}}/>
+                dangerouslySetInnerHTML={{ __html: itemWrapper.locales.title || itemWrapper.placeholder }} />
 
             <div className={`article-portfolio-item-title-category text-2`}
-                 dangerouslySetInnerHTML={{__html: itemWrapper.category?.label }}/>
+                dangerouslySetInnerHTML={{ __html: itemWrapper.category?.label }} />
         </div>
     )
 }
@@ -127,14 +175,14 @@ function ArticlePortfolioItemBody({ itemWrapper }) {
             <Tags className={`article-portfolio-item-body-tags`}>
                 {itemWrapper.locales.tags && Boolean(itemWrapper.locales.tags.length) && itemWrapper.locales.tags.map((tag, key) => (
                     <Tag key={key}
-                         text={tag}
-                         variant={Tag.Variants.DARK}
-                         className={`article-portfolio-item-body-tag text-1`}/>
+                        text={tag}
+                        variant={Tag.Variants.DARK}
+                        className={`article-portfolio-item-body-tag text-1`} />
                 ))}
             </Tags>
 
             <div className={`article-portfolio-item-body-description text-2`}
-                 dangerouslySetInnerHTML={{__html: itemWrapper.locales.text}}/>
+                dangerouslySetInnerHTML={{ __html: itemWrapper.locales.text }} />
         </div>
     )
 }
@@ -150,14 +198,14 @@ function ArticlePortfolioItemFooter({ itemWrapper }) {
     const hasScreenshotsOrVideo = itemWrapper.preview?.hasScreenshotsOrYoutubeVideo
 
     const previewMenuAvailable = hasPreview && (hasPreviewLinks || hasScreenshotsOrVideo)
-    if(!previewMenuAvailable)
+    if (!previewMenuAvailable)
         return <></>
 
     return (
         <div className={`article-portfolio-item-footer`}>
             <ArticleItemPreviewMenu itemWrapper={itemWrapper}
-                                    spaceBetween={true}
-                                    className={`article-portfolio-item-footer-menu`}/>
+                spaceBetween={true}
+                className={`article-portfolio-item-footer-menu`} />
         </div>
     )
 }

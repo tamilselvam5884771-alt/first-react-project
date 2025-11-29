@@ -1,0 +1,156 @@
+// Keyframes for innovative animations
+
+// Floating text animation
+@keyframes floatText {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(10px, 15px) rotate(2deg);
+    }
+
+    50% {
+        transform: translate(0, 25px) rotate(0deg);
+    }
+
+    75% {
+        transform: translate(-10px, 15px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+// Infinite ticker scrolling
+@keyframes ticker {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+// Spotlight effect gradient animation
+@keyframes spotlightPulse {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+// Floating icons parallax-like movement
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+// Mixins for easy usage
+@mixin floating-background-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0; // Behind content
+
+    .floating-word {
+        position: absolute;
+        font-size: 5rem;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.03); // Very subtle
+        white-space: nowrap;
+        animation: floatText 20s infinite ease-in-out;
+
+        &.theme-light {
+            color: rgba(0, 0, 0, 0.03);
+        }
+    }
+}
+
+@mixin parallax-icons {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.15;
+
+    i {
+        font-size: 2rem;
+        animation: floatIcon 6s ease-in-out infinite;
+    }
+}
+
+@mixin card-3d-tilt {
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    &:hover {
+        z-index: 10;
+    }
+}
+
+@mixin spotlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.1) 0%, transparent 80%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    .card:hover & {
+        opacity: 1;
+    }
+}
+
+@mixin news-ticker {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    white-space: nowrap;
+    position: relative;
+
+    .ticker-content {
+        display: inline-block;
+        animation: ticker 30s linear infinite;
+        padding-left: 100%; // Start from right
+
+        span {
+            display: inline-block;
+            padding: 0 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+
+            &::after {
+                content: "•";
+                margin-left: 2rem;
+                opacity: 0.5;
+            }
+        }
+    }
+}

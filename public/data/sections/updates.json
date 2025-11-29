@@ -27,7 +27,6 @@
             }
         }
     },
-
     "articles": [
         {
             "id": 1,
@@ -40,9 +39,12 @@
             "items": [
                 {
                     "id": 1,
-                    "img": null,
+                    "img": "images/pictures/screenshot-demo-square-1.jpg",
                     "faIcon": "fa-solid fa-tablet-screen-button",
-                    "faIconColors": {"bg": "", "fill": ""},
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
                     "locales": {
                         "en": {
                             "title": "03",
@@ -61,9 +63,12 @@
                 },
                 {
                     "id": 2,
-                    "img": null,
+                    "img": "images/pictures/screenshot-demo-square-2.jpg",
                     "faIcon": "fa-solid fa-star",
-                    "faIconColors": {"bg": "", "fill": ""},
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
                     "locales": {
                         "en": {
                             "title": "50+",
@@ -82,9 +87,12 @@
                 },
                 {
                     "id": 3,
-                    "img": null,
+                    "img": "images/pictures/screenshot-demo-square-3.jpg",
                     "faIcon": "fa-solid fa-globe",
-                    "faIconColors": {"bg": "", "fill": ""},
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
                     "locales": {
                         "en": {
                             "title": "10",
@@ -103,9 +111,12 @@
                 },
                 {
                     "id": 4,
-                    "img": null,
+                    "img": "images/pictures/screenshot-demo-square-4.jpg",
                     "faIcon": "fa-solid fa-diagram-project",
-                    "faIconColors": {"bg": "", "fill": ""},
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
                     "locales": {
                         "en": {
                             "title": "05",
@@ -124,9 +135,12 @@
                 },
                 {
                     "id": 5,
-                    "img": null,
+                    "img": "images/pictures/screenshot-demo-square-5.jpg",
                     "faIcon": "fa-solid fa-coffee",
-                    "faIconColors": {"bg": "", "fill": ""},
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
                     "locales": {
                         "en": {
                             "title": "20,000",
@@ -145,9 +159,12 @@
                 },
                 {
                     "id": 6,
-                    "img": null,
+                    "img": "images/pictures/screenshot-demo-square-6.jpg",
                     "faIcon": "fa-solid fa-laptop-code",
-                    "faIconColors": {"bg": "", "fill": ""},
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
                     "locales": {
                         "en": {
                             "title": "1,000",
@@ -166,39 +183,46 @@
                 },
                 {
                     "id": 7,
-                    "img": null,
+                    "img": "images/pictures/screenshot-demo-square-1.jpg",
                     "faIcon": "fa-solid fa-heart",
-                    "faIconColors": {"bg": "", "fill": ""},
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
                     "locales": {
                         "en": {
                             "title": "Infinite",
                             "text": "Passion for public speaking"
                         },
                         "es": {
-                            "title": "Infinita",
                             "text": "Pasión por Aprender"
                         },
                         "fr": {
-                            "title": "Infinie",
                             "text": "Passion d'apprendre"
                         },
                         "ko": {
-                            "title": "무한대",
                             "text": "배움에 대한 열정"
                         }
                     }
                 }
             ]
         },
-
         {
             "id": 2,
             "component": "ArticleThread",
             "locales": {
-                "en": { "title": "Quick {{Facts}}" },
-                "es": { "title": "Feed de {{Noticias}}" },
-                "fr": { "title": "Fil d'{{Actualités}}" },
-                "ko": { "title": "{{뉴스}} 피드" }
+                "en": {
+                    "title": "Quick {{Facts}}"
+                },
+                "es": {
+                    "title": "Feed de {{Noticias}}"
+                },
+                "fr": {
+                    "title": "Fil d'{{Actualités}}"
+                },
+                "ko": {
+                    "title": "{{뉴스}} 피드"
+                }
             },
             "settings": {
                 "max_rows_collapse_threshold": 3,
@@ -208,7 +232,10 @@
             "items": [
                 {
                     "id": 1,
-                    "date": {"year": 2028, "month": 5},
+                    "date": {
+                        "year": 2028,
+                        "month": 5
+                    },
                     "preview": {
                         "links": [],
                         "screenshots": [],
@@ -217,141 +244,44 @@
                     },
                     "locales": {
                         "en": {
-                            "title": "Graduated from {{K S R!}}",
-                            "province": "TAMILNADU",
-                            "country": "INDIA",
-                            "institution": "EDUATIONAL INSTITUTION(KSR)",
-                            "text": "I am proud to announce that I have graduated from KSRCE with a degree in Computer Science! This milestone marks the culmination of years of hard work, dedication, and passion for technology. I am grateful for the support of my family, friends, and professors who have guided me throughout this journey. As I step into the next chapter of my life, I am excited to apply the knowledge and skills I have gained to make a positive impact in the tech industry. Here's to new beginnings and endless possibilities!"
+                            "title": "Graduation",
+                            "text": "will be graduated at KSR on 2028"
                         },
-                        "es": {
-                            "title": "¡Graduado de la {{Universidad!}}",
-                            "province": "California",
-                            "country": "EE.UU.",
-                            "institution": "Tech University",
-                            "text": "¡Me enorgullece anunciar que me he graduado de Tech University con un título en Ciencias de la Computación! Este hito marca la culminación de años de trabajo duro, dedicación y pasión por la tecnología. Estoy agradecido por el apoyo de mi familia, amigos y profesores que me han guiado a lo largo de este viaje. Al entrar en el próximo capítulo de mi vida, estoy emocionado de aplicar los conocimientos y habilidades que he adquirido para tener un impacto positivo en la industria tecnológica. ¡Brindemos por nuevos comienzos y posibilidades infinitas!"
-                        },
-                        "fr": {
-                            "title": "Diplômé de l'{{Université!}}",
-                            "province": "Californie",
-                            "country": "États-Unis",
-                            "institution": "Tech University",
-                            "text": "Je suis fier d'annoncer que j'ai obtenu mon diplôme de Tech University avec un diplôme en informatique ! Cette étape marque l'aboutissement de plusieurs années de travail acharné, de dévouement et de passion pour la technologie. Je suis reconnaissant du soutien de ma famille, de mes amis et de mes professeurs qui m'ont guidé tout au long de ce parcours. En entrant dans le prochain chapitre de ma vie, je suis enthousiaste à l'idée d'appliquer les connaissances et les compétences que j'ai acquises pour avoir un impact positif dans l'industrie technologique. Voici à de nouveaux départs et des possibilités"
+                        "ta": {
+                            "title": "பட்டமளிப்பு",
+                            "text": "2028 இல் KSR இல் பட்டம் பெறுவார்"
+                        }
                     }
-                }
                 },
                 {
                     "id": 2,
-                    "date": {"year": 2023, "month": 6},
+                    "date": {
+                        "year": 2024,
+                        "month": 5
+                    },
                     "preview": {
-                        "links": [{
-                            "href": "https://www.youtube.com/@jomakaze",
-                            "tooltipString": "open_website",
-                            "faIcon": "fa-solid fa-eye"
-                        }],
+                        "links": [],
                         "screenshots": [],
                         "screenshotsAspectRatio": "",
-                        "youtubeVideo": "https://www.youtube.com/watch?v=oFCy3vEIAQk"
+                        "youtubeVideo": ""
                     },
                     "locales": {
                         "en": {
-                            "title": "Started my own {{Youtube Channel!}}",
-                            "province": "Trichy",
-                            "country": "INDIA",
-                            "institution": "",
-                            "text": "I’m thrilled to announce the launch of my own YouTube channel! 🎥✨ Join me on this exciting journey as I share my passion for social development, thoughtful ideas, and all things. From tutorials and tips to project showcases, I can’t wait to connect with you all through this platform. Don’t forget to subscribe and hit the notification bell to stay updated on my latest videos. Let’s embark on this adventure together!"
+                            "title": "Completed Schooling",
+                            "text": "completed schlooings on 2024"
                         },
-                        "es": {
-                            "title": "¡Comencé mi propio {{Canal de YouTube!}}",
-                            "province": "California",
-                            "country": "EE.UU.",
-                            "institution": "",
-                            "text": "¡Estoy emocionado de anunciar el lanzamiento de mi propio canal de YouTube! 🎥✨ Únete a mí en este emocionante viaje mientras comparto mi pasión por la tecnología, la programación y todo lo digital. Desde tutoriales y consejos hasta presentaciones de proyectos, no puedo esperar para conectar con todos ustedes a través de esta plataforma. No olvides suscribirte y activar la campana de notificaciones para estar al tanto de mis últimos videos. ¡Embarquémonos juntos en esta aventura!"
-                        },
-                        "fr": {
-                            "title": "Lancement de ma propre {{Chaîne YouTube!}}",
-                            "province": "Californie",
-                            "country": "États-Unis",
-                            "institution": "",
-                            "text": "Je suis ravi d'annoncer le lancement de ma propre chaîne YouTube ! 🎥✨ Rejoignez-moi dans cette aventure passionnante où je partagerai ma passion pour la technologie, la programmation et tout ce qui est numérique. Des tutoriels et astuces aux présentations de projets, j'ai hâte de me connecter avec vous tous à travers cette plateforme. N'oubliez pas de vous abonner et d'activer la cloche de notification pour rester informé de mes dernières vidéos. Embarquons ensemble dans cette aventure !"
-                        },
-                        "ko": {
-                            "title": "{{유튜브 채널!}} 시작",
-                            "province": "캘리포니아",
-                            "country": "미국",
-                            "institution": "",
-                            "text": "저의 유튜브 채널을 시작하게 되어 매우 기쁩니다! 🎥✨ 기술, 코딩, 디지털 관련 모든 것에 대한 열정을 공유하는 이 흥미진진한 여정에 여러분을 초대합니다. 튜토리얼과 팁부터 프로젝트 소개까지, 이 플랫폼을 통해 여러분과 소통할 수 있기를 기대합니다. 구독하고 알림 벨을 눌러 최신 동영상을 받아보세요. 함께 이 모험을 시작해 봅시다!"
+                        "ta": {
+                            "title": "பள்ளிப்படிப்பு முடிந்தது",
+                            "text": "2024 இல் பள்ளிப்படிப்பை முடித்தார்"
                         }
                     }
                 },
                 {
                     "id": 3,
-                    "date": {"year": 2024, "month": 12},
-                    "preview": {
-                        "links": [
-                            {"href": "https://medium.com", "tooltipString": "open_website", "faIcon": "fa-brands fa-medium"}
-                        ],
-                        "screenshots": [],
-                        "screenshotsAspectRatio": "",
-                        "youtubeVideo": ""
+                    "date": {
+                        "year": 2017,
+                        "month": 1
                     },
-                    "locales": {
-                        "en": {
-                            "title": "Working on a new {{institution project!}}",
-                            "province": "chennai",
-                            "country": "INDIA",
-                            "institution": "",
-                            "text": "I’m excited to share that I’m currently working on a new institution project! Some features of this project include:",
-                            "list": [
-                                "Cross-platform compatibility with iOS and Android",
-                                "User-friendly interface with intuitive navigation",
-                                "Integration with popular APIs for enhanced functionality",
-                                "Real-time data synchronization for seamless user experience"
-                            ]
-                        },
-                        "es": {
-                            "title": "Trabajando en un nuevo {{proyecto móvil!}}",
-                            "province": "California",
-                            "country": "EE.UU.",
-                            "institution": "",
-                            "text": "Estoy emocionado de compartir que actualmente estoy trabajando en un nuevo proyecto móvil! Algunas características de este proyecto incluyen:",
-                            "list": [
-                                "Compatibilidad multiplataforma con iOS y Android",
-                                "Interfaz amigable con navegación intuitiva",
-                                "Integración con APIs populares para funcionalidad mejorada",
-                                "Sincronización de datos en tiempo real para una experiencia de usuario fluida"
-                            ]
-                        },
-                        "fr": {
-                            "title": "Travail sur un nouveau {{projet mobile!}}",
-                            "province": "Californie",
-                            "country": "États-Unis",
-                            "institution": "",
-                            "text": "Je suis ravi de partager que je travaille actuellement sur un nouveau projet mobile ! Certaines fonctionnalités de ce projet incluent :",
-                            "list": [
-                                "Compatibilité multiplateforme avec iOS et Android",
-                                "Interface conviviale avec une navigation intuitive",
-                                "Intégration avec des API populaires pour une fonctionnalité améliorée",
-                                "Synchronisation des données en temps réel pour une expérience utilisateur fluide"
-                            ]
-                        },
-                        "ko": {
-                            "title": "{{모바일 프로젝트!}} 작업 중",
-                            "province": "캘리포니아",
-                            "country": "미국",
-                            "institution": "",
-                            "text": "현재 새로운 모바일 프로젝트를 작업 중입니다! 이 프로젝트의 몇 가지 기능은 다음과 같습니다:",
-                            "list": [
-                                "iOS 및 Android와의 크로스 플랫폼 호환성",
-                                "직관적인 탐색을 갖춘 사용자 친화적인 인터페이스",
-                                "기능 향상을 위한 인기 API 통합",
-                                "원활한 사용자 경험을 위한 실시간 데이터 동기화"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "id": 4,
-                    "date": {"year": 2025, "month": 10},
                     "preview": {
                         "links": [],
                         "screenshots": [],
@@ -360,99 +290,35 @@
                     },
                     "locales": {
                         "en": {
-                            "title": "Attending the {{Tech Conference 2025!}}",
-                            "province": "covai",
-                            "country": "INDIA",
-                            "institution": "Tamilnadu tech summit.",
-                            "text": "I’m thrilled to announce that I’ll be attending the [[Tech Conference 2025]] in covai, india! This event is a fantastic opportunity to connect with industry leaders, learn about the latest trends in technology, and share insights with fellow tech enthusiasts. I’m looking forward to engaging in discussions, attending workshops, and exploring innovative solutions that are shaping the future of our industry. If you’re attending the conference, let’s connect! I’d love to meet fellow developers and tech lovers. Stay tuned for updates and highlights from the event!"
+                            "title": "Chasing Passion",
+                            "text": "starts chasing passion on 2017 at Bharath Mahal"
                         },
-                        "es": {
-                            "title": "Asistiendo a la {{Conferencia de Tecnología 2025!}}",
-                            "province": "Tokio",
-                            "country": "Japón",
-                            "institution": "Tech Innovators Inc.",
-                            "text": "¡Estoy emocionado de anunciar que asistiré a la [[Conferencia de Tecnología 2025]] en Tokio, Japón! Este evento es una oportunidad fantástica para conectar con líderes de la industria, aprender sobre las últimas tendencias en tecnología y compartir ideas con otros entusiastas de la tecnología. Estoy deseando participar en discusiones, asistir a talleres y explorar soluciones innovadoras que están dando forma al futuro de nuestra industria. Si vas a asistir a la conferencia, ¡conectemos! Me encantaría conocer a otros desarrolladores y amantes de la tecnología. ¡Mantente atento a las actualizaciones y momentos destacados del evento!"
-                        },
-                        "fr": {
-                            "title": "Participation à la {{Conférence Tech 2025!}}",
-                            "province": "Tokyo",
-                            "country": "Japon",
-                            "institution": "Tech Innovators Inc.",
-                            "text": "Je suis ravi d’annoncer que je participerai à la [[Tech Conference 2025]] à Tokyo, au Japon ! Cet événement est une occasion formidable de rencontrer des leaders du secteur, de découvrir les dernières tendances technologiques et d’échanger avec d’autres passionnés de tech. J’ai hâte de participer aux discussions, d’assister aux ateliers et d’explorer des solutions innovantes qui façonnent l’avenir de notre industrie. Si vous assistez à la conférence, n’hésitez pas à me contacter ! Ce serait un plaisir de rencontrer d’autres développeurs et amateurs de technologie. Restez connectés pour des mises à jour et des moments forts de l’événement !"
-                        },
-                        "ko": {
-                            "title": "{{기술 컨퍼런스 2025!}} 참석",
-                            "province": "도쿄",
-                            "country": "일본",
-                            "institution": "Tech Innovators Inc.",
-                            "text": "[[2025년 도쿄에서 열리는]] 기술 컨퍼런스에 참석하게 되어 매우 기쁩니다! 이 행사는 업계 리더들과 연결하고 최신 기술 트렌드를 배우며, 다른 기술 애호가들과 통찰력을 공유할 수 있는 환상적인 기회입니다. 토론에 참여하고, 워크숍에 참석하며, 우리 산업의 미래를 형성하는 혁신적인 솔루션을 탐색할 수 있기를 기대합니다. 컨퍼런스에 참석하신다면, 함께 연결해요! 다른 개발자와 기술 애호가들을 만나고 싶습니다. 행사에서의 업데이트와 하이라이트를 기대해 주세요!"
+                        "ta": {
+                            "title": "ஆர்வத்தைத் துரத்துதல்",
+                            "text": "2017 இல் பாரத் மஹாலில் ஆர்வத்தைத் துரத்தத் தொடங்கினார்"
                         }
                     }
                 },
                 {
-                    "id": 5,
-                    "date": {"year": 2025, "month": 6},
+                    "id": 4,
+                    "date": {
+                        "year": 2012,
+                        "month": 6
+                    },
                     "preview": {
-                        "links": [
-                            {"href": "https://google.com", "tooltipString": "open_website", "faIcon": "fa-solid fa-link"},
-                            {"href": "https://github.com/ryanbalieiro/react-portfolio-template", "tooltipString": "see_on_github", "faIcon": "fa-brands fa-github"}
-                        ],
+                        "links": [],
                         "screenshots": [],
                         "screenshotsAspectRatio": "",
                         "youtubeVideo": ""
                     },
                     "locales": {
                         "en": {
-                            "title": "Launched my {{personal website!}}",
-                            "province": "Namakkal",
-                            "country": "INDIA",
-                            "institution": "",
-                            "text": "I’m excited to announce the launch of my [[personal website]]! 🎉 This platform is a space where I can share my projects, blog posts, and insights into the world of technology and development. It’s been a labor of love, and I can’t wait for you all to explore it. Here are some highlights of what you can find on the site:",
-                            "list": [
-                                "Portfolio showcasing my projects and contributions",
-                                "Blog with articles on technology, coding, and personal experiences",
-                                "Contact form for inquiries and collaborations",
-                                "Links to my social media profiles and GitHub"
-                            ]
+                            "title": "Started Schooling",
+                            "text": "starting schoolings at 2012."
                         },
-                        "es": {
-                            "title": "¡Lanzamiento de mi {{sitio web personal!}}",
-                            "province": "California",
-                            "country": "EE.UU.",
-                            "institution": "",
-                            "text": "Estoy emocionado de anunciar el lanzamiento de mi [[sitio web personal]]! 🎉 Esta plataforma es un espacio donde puedo compartir mis proyectos, publicaciones de blog y reflexiones sobre el mundo de la tecnología y el desarrollo. Ha sido un trabajo de amor, y no puedo esperar a que todos lo exploren. Aquí hay algunos aspectos destacados de lo que puedes encontrar en el sitio:",
-                            "list": [
-                                "Portafolio que muestra mis proyectos y contribuciones",
-                                "Blog con artículos sobre tecnología, codificación y experiencias personales",
-                                "Formulario de contacto para consultas y colaboraciones",
-                                "Enlaces a mis perfiles en redes sociales y GitHub"
-                            ]
-                        },
-                        "fr": {
-                            "title": "Lancement de mon {{site web personnel!}}",
-                            "province": "Californie",
-                            "country": "États-Unis",
-                            "institution": "",
-                            "text": "Je suis ravi d'annoncer le lancement de mon [[site web personnel]] ! 🎉 Cette plateforme est un espace où je peux partager mes projets, articles de blog et réflexions sur le monde de la technologie et du développement. C'est un travail de passion, et j'ai hâte que vous l'exploriez tous. Voici quelques points forts de ce que vous pouvez trouver sur le site :",
-                            "list": [
-                                "Portfolio présentant mes projets et contributions",
-                                "Blog avec des articles sur la technologie, la programmation et mes expériences personnelles",
-                                "Formulaire de contact pour les demandes et collaborations",
-                                "Liens vers mes profils sur les réseaux sociaux et GitHub"
-                            ]
-                        },
-                        "ko": {
-                            "title": "{{개인 웹사이트!}} 출시",
-                            "province": "캘리포니아",
-                            "country": "미국",
-                            "institution": "",
-                            "text": "개인 웹사이트를 출시하게 되어 매우 기쁩니다! 🎉 이 플랫폼은 제가 프로젝트, 블로그 게시물 및 기술과 개발 세계에 대한 통찰력을 공유할 수 있는 공간입니다. 사랑으로 만든 결과물이며, 여러분이 탐험하기를 기대합니다. 사이트에서 찾을 수 있는 몇 가지 하이라이트는 다음과 같습니다:",
-                            "list": [
-                                "프로젝트와 기여를 보여주는 포트폴리오",
-                                "기술, 코딩 및 개인 경험에 관한 블로그",
-                                "문의 및 협업을 위한 연락처 양식",
-                                "소셜 미디어 프로필 및 GitHub 링크"
-                            ]
+                        "ta": {
+                            "title": "பள்ளிப்படிப்பு தொடங்கியது",
+                            "text": "2012 இல் பள்ளிப்படிப்பைத் தொடங்கினார்."
                         }
                     }
                 }

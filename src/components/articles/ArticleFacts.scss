@@ -1,57 +1,90 @@
 @import "/src/styles/extend.scss";
 
 div.article-facts-items {
-    --avatar-size: 120px;
-    --margin: 4px 0 16px;
-    --info-margin-top: 16px;
+    --card-width: 250px;
+    --card-height: 350px;
+    --margin: 10px;
 
-    @include media-breakpoint-down(xl) {
-        --avatar-size: 110px;
-    }
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
     @include media-breakpoint-down(lg) {
-        --avatar-size: 100px;
-        --margin: 4px 0 8px;
+        --card-width: 220px;
+        --card-height: 300px;
     }
 
     @include media-breakpoint-down(md) {
-        --avatar-size: 90px;
-    }
-
-    @include media-breakpoint-down(sm) {
-        --avatar-size: 80px;
+        --card-width: 200px;
+        --card-height: 280px;
     }
 }
 
 div.article-facts-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     margin: var(--margin);
+    perspective: 1000px; // For potential 3D effects
 }
 
-div.article-facts-item-avatar {
-    width: var(--avatar-size);
-    height: var(--avatar-size);
-    border-radius: 100%;
-    font-size: calc(var(--avatar-size)/2.4)!important;
+div.article-facts-item-card {
+    width: var(--card-width);
+    height: var(--card-height);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 
-    background-color: var(--theme-texts);
-    color: var(--theme-texts-inv);
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+        .article-facts-item-content {
+            transform: translateY(0);
+
+            .article-facts-item-description {
+                opacity: 1;
+                max-height: 200px; // Allow expansion
+                margin-top: 8px;
+            }
+        }
+    }
 }
 
-div.article-facts-item-info {
-    margin-top: var(--info-margin-top);
-    text-align: center;
+div.article-facts-item-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%);
+    color: #fff;
+    transform: translateY(60%); // Initially push down to show only title
+    transition: transform 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%; // Cover full height on hover if needed, or just bottom area
 
-    h6 {
-        margin-bottom: 4px;
-        color: var(--theme-primary);
-        font-weight: bold;
-    }
+    // Adjust transform to show title always
+    transform: translateY(calc(100% - 70px));
+}
 
-    &-description {
-        color: var(--theme-texts-light);
-    }
+.article-facts-item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.article-facts-item-description {
+    font-size: 0.9rem;
+    color: #ddd;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out, margin-top 0.4s ease;
 }
