@@ -1,0 +1,10 @@
+{
+    "username": "tamilselvam5884771-alt",
+    "displayName": "Hariharasudhan R",
+    "repositories": [
+        "first-react-project"
+    ],
+    "refreshInterval": 300000,
+    "maxCommits": 5,
+    "showContributions": true
+}

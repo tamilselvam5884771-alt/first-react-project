@@ -19,6 +19,8 @@ import CartoonCharacter from "/src/components/CartoonCharacter.jsx"
 import PageTransition from "/src/components/PageTransition.jsx"
 import ClickSpark from "/src/components/ClickSpark.jsx"
 import RocketLaunch from "/src/components/RocketLaunch.jsx"
+import GitHubActivityFeed from "/src/components/GitHubActivityFeed.jsx"
+import ScrollProgress from "/src/components/ScrollProgress.jsx"
 
 /** Initialization Script... **/
 let container = null
@@ -43,6 +45,8 @@ const App = () => {
             <CartoonCharacter />
             <ClickSpark />
             <RocketLaunch />
+            <GitHubActivityFeed />
+            <ScrollProgress />
             <AppEssentialsWrapper>
                 <AppCapabilitiesWrapper>
                     <Portfolio />

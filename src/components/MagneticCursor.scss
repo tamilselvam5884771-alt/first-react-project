@@ -1,0 +1,120 @@
+.magnetic-cursor,
+.magnetic-cursor-outer {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference;
+}
+
+.magnetic-cursor {
+    width: 12px;
+    height: 12px;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+
+    .cursor-inner {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+    }
+
+    &.hovering {
+        width: 8px;
+        height: 8px;
+
+        .cursor-inner {
+            background: #00ff41;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 1);
+        }
+    }
+
+    &.clicking {
+        width: 16px;
+        height: 16px;
+
+        .cursor-inner {
+            background: #ff4444;
+            box-shadow: 0 0 30px rgba(255, 68, 68, 1);
+        }
+    }
+}
+
+.magnetic-cursor-outer {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease-out;
+
+    &.hovering {
+        width: 60px;
+        height: 60px;
+        border-color: rgba(0, 255, 65, 0.5);
+        box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+    }
+
+    &.clicking {
+        width: 50px;
+        height: 50px;
+        border-color: rgba(255, 68, 68, 0.7);
+        box-shadow: 0 0 30px rgba(255, 68, 68, 0.5);
+    }
+}
+
+.cursor-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00ff41, #00cc33);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.6);
+    transition: opacity 0.1s ease, transform 0.1s ease;
+
+    &.burst {
+        background: linear-gradient(135deg, #ff4444, #ff6666);
+        box-shadow: 0 0 15px rgba(255, 68, 68, 0.8);
+    }
+}
+
+// Hide default cursor
+body {
+    cursor: none !important;
+
+    * {
+        cursor: none !important;
+    }
+}
+
+// Disable on touch devices
+@media (hover: none) and (pointer: coarse) {
+
+    .magnetic-cursor,
+    .magnetic-cursor-outer,
+    .cursor-particles {
+        display: none;
+    }
+
+    body,
+    body * {
+        cursor: auto !important;
+    }
+}
+
+// Performance optimization
+.magnetic-cursor,
+.magnetic-cursor-outer,
+.cursor-particle {
+    will-change: transform, opacity;
+}

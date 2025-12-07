@@ -1,0 +1,92 @@
+{
+    "welcomeMessage": "Welcome to Hari's Portfolio Terminal v1.0\nType 'help' to see available commands.\n",
+    "prompt": "visitor@hari-portfolio:~$",
+    "commands": {
+        "help": {
+            "description": "Show available commands",
+            "response": "Available commands:\n  help       - Show this help message\n  about      - Navigate to About section\n  education  - Navigate to Education section\n  skills     - Navigate to Skills section\n  updates    - Navigate to Updates section\n  contact    - Navigate to Contact section\n  theme      - Show available themes\n  whoami     - Display current user info\n  date       - Show current date and time\n  clear      - Clear terminal screen\n  matrix     - Enter the Matrix...\n  hack       - Initiate hacking sequence\n  coffee     - Get some coffee\n  sudo       - Try sudo commands"
+        },
+        "about": {
+            "description": "Navigate to About section",
+            "response": "Navigating to About section...",
+            "action": "navigate",
+            "target": "about"
+        },
+        "education": {
+            "description": "Navigate to Education section",
+            "response": "Navigating to Education section...",
+            "action": "navigate",
+            "target": "education"
+        },
+        "skills": {
+            "description": "Navigate to Skills section",
+            "response": "Navigating to Skills section...",
+            "action": "navigate",
+            "target": "skills"
+        },
+        "updates": {
+            "description": "Navigate to Updates section",
+            "response": "Navigating to Updates section...",
+            "action": "navigate",
+            "target": "updates"
+        },
+        "contact": {
+            "description": "Navigate to Contact section",
+            "response": "Navigating to Contact section...",
+            "action": "navigate",
+            "target": "contact"
+        },
+        "theme": {
+            "description": "Show available themes",
+            "response": "Available themes:\n  Use 'theme <name>' to change theme\n  - light\n  - dark\n  - blue\n  - purple"
+        },
+        "whoami": {
+            "description": "Display current user info",
+            "response": "You are: Anonymous Visitor\nIP: 127.0.0.1 (localhost)\nBrowser: Awesome Browser\nStatus: Exploring Hari's Portfolio"
+        },
+        "date": {
+            "description": "Show current date and time",
+            "response": "{{CURRENT_DATE}}",
+            "action": "date"
+        },
+        "clear": {
+            "description": "Clear terminal screen",
+            "response": "",
+            "action": "clear"
+        },
+        "matrix": {
+            "description": "Enter the Matrix",
+            "response": "Wake up, Neo...\nThe Matrix has you...\nFollow the white rabbit.\n\nKnock, knock, Neo.",
+            "easter_egg": true
+        },
+        "hack": {
+            "description": "Initiate hacking sequence",
+            "response": "Initializing hacking sequence...\n[████████████████████] 100%\nAccess Granted!\nJust kidding 😄\nThis is a portfolio, not a hacking simulator!",
+            "easter_egg": true
+        },
+        "coffee": {
+            "description": "Get some coffee",
+            "response": "☕ Here's your coffee!\nFun fact: Programmers turn coffee into code.\nEnjoy your virtual coffee while exploring!",
+            "easter_egg": true
+        },
+        "sudo": {
+            "description": "Try sudo commands",
+            "response": "Nice try! But you don't have sudo privileges here 😉\nThis is a portfolio, not a Linux terminal!",
+            "easter_egg": true
+        },
+        "ls": {
+            "description": "List directory contents",
+            "response": "about.html\neducation.html\nskills.html\nupdates.html\ncontact.html\nawesome_projects/\nimpressive_skills/",
+            "easter_egg": true
+        },
+        "pwd": {
+            "description": "Print working directory",
+            "response": "/home/visitor/hari-portfolio",
+            "easter_egg": true
+        }
+    },
+    "errorMessages": {
+        "commandNotFound": "Command not found: '{{COMMAND}}'\nType 'help' to see available commands.",
+        "invalidSyntax": "Invalid syntax. Type 'help' for usage information."
+    }
+}
