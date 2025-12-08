@@ -21,7 +21,9 @@ div.article-timeline-item-info-for-timelines {
     width: 100%;
     padding: var(--content-padding);
 
-    background-color: var(--theme-boards-background);
+    background-color: rgba(var(--theme-boards-background-rgb), 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: $standard-border-radius;
 
     /* Enhanced Styling */
@@ -33,6 +35,7 @@ div.article-timeline-item-info-for-timelines {
         transform: translateY(-5px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         border-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(var(--theme-boards-background-rgb), 0.85);
     }
 }
 
