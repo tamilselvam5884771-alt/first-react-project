@@ -23,15 +23,7 @@ import GitHubActivityFeed from "/src/components/GitHubActivityFeed.jsx"
 import ScrollProgress from "/src/components/ScrollProgress.jsx"
 
 /** Initialization Script... **/
-let container = null
-
-document.addEventListener('DOMContentLoaded', function (event) {
-    if (container)
-        return
-
-    container = document.getElementById('root')
-    createRoot(document.getElementById('root')).render(<App />)
-})
+createRoot(document.getElementById('root')).render(<App />)
 
 /**
  * This is the main app component. It wraps the content of the app with AppEssentialsWrapper and AppCapabilitiesWrapper.
