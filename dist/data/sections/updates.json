@@ -1,0 +1,328 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Life recently",
+                "title_short_nav": "Updates",
+                "title_long_prefix": "Take a look at my",
+                "title_long": "Recent {{Updates}}"
+            },
+            "es": {
+                "title_short": "Vida Reciente",
+                "title_short_nav": "Actualizaciones",
+                "title_long_prefix": "Consulta mis",
+                "title_long": "Actualizaciones {{Recientes}}"
+            },
+            "fr": {
+                "title_short": "Vie Récente",
+                "title_short_nav": "Mises à Jour",
+                "title_long_prefix": "Découvrez mes",
+                "title_long": "Dernières {{Mises à Jour}}"
+            },
+            "ko": {
+                "title_short": "최근의 삶",
+                "title_short_nav": "업데이트",
+                "title_long_prefix": "내 최근",
+                "title_long": "{{업데이트}}를 확인해 보세요"
+            }
+        }
+    },
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleFacts",
+            "locales": {},
+            "settings": {
+                "order_items_by": "id",
+                "order_items_sort": "asc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "images/pictures/screenshot-demo-square-1.jpg",
+                    "faIcon": "fa-solid fa-tablet-screen-button",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "03",
+                            "text": "state level prizes"
+                        },
+                        "es": {
+                            "text": "Aplicaciones Publicadas"
+                        },
+                        "fr": {
+                            "text": "Applications Publiées"
+                        },
+                        "ko": {
+                            "text": "출시된 앱"
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "img": "images/pictures/screenshot-demo-square-2.jpg",
+                    "faIcon": "fa-solid fa-star",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "50+",
+                            "text": "events participation"
+                        },
+                        "es": {
+                            "text": "Estrellas en GitHub"
+                        },
+                        "fr": {
+                            "text": "Étoiles sur GitHub"
+                        },
+                        "ko": {
+                            "text": "GitHub의 별"
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "img": "images/pictures/screenshot-demo-square-3.jpg",
+                    "faIcon": "fa-solid fa-globe",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "10",
+                            "text": "awards received"
+                        },
+                        "es": {
+                            "text": "Países Visitados"
+                        },
+                        "fr": {
+                            "text": "Pays Visités"
+                        },
+                        "ko": {
+                            "text": "방문한 국가"
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "img": "images/pictures/screenshot-demo-square-4.jpg",
+                    "faIcon": "fa-solid fa-diagram-project",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "05",
+                            "text": "national level workshop participations"
+                        },
+                        "es": {
+                            "text": "Proyectos de Código Abierto"
+                        },
+                        "fr": {
+                            "text": "Projets Open-source"
+                        },
+                        "ko": {
+                            "text": "오픈 소스 프로젝트"
+                        }
+                    }
+                },
+                {
+                    "id": 5,
+                    "img": "images/pictures/screenshot-demo-square-5.jpg",
+                    "faIcon": "fa-solid fa-coffee",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "20,000",
+                            "text": "Coffees consumed"
+                        },
+                        "es": {
+                            "text": "Cafés Consumidos"
+                        },
+                        "fr": {
+                            "text": "Cafés Consommés"
+                        },
+                        "ko": {
+                            "text": "소비된 커피"
+                        }
+                    }
+                },
+                {
+                    "id": 6,
+                    "img": "images/pictures/screenshot-demo-square-6.jpg",
+                    "faIcon": "fa-solid fa-laptop-code",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "1,000",
+                            "text": "Lines of code"
+                        },
+                        "es": {
+                            "text": "Líneas de código"
+                        },
+                        "fr": {
+                            "text": "Lignes de code"
+                        },
+                        "ko": {
+                            "text": "코드 라인 수"
+                        }
+                    }
+                },
+                {
+                    "id": 7,
+                    "img": "images/pictures/screenshot-demo-square-1.jpg",
+                    "faIcon": "fa-solid fa-heart",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Infinite",
+                            "text": "Passion for public speaking"
+                        },
+                        "es": {
+                            "text": "Pasión por Aprender"
+                        },
+                        "fr": {
+                            "text": "Passion d'apprendre"
+                        },
+                        "ko": {
+                            "text": "배움에 대한 열정"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "component": "ArticleThread",
+            "locales": {
+                "en": {
+                    "title": "Quick {{Facts}}"
+                },
+                "es": {
+                    "title": "Feed de {{Noticias}}"
+                },
+                "fr": {
+                    "title": "Fil d'{{Actualités}}"
+                },
+                "ko": {
+                    "title": "{{뉴스}} 피드"
+                }
+            },
+            "settings": {
+                "max_rows_collapse_threshold": 3,
+                "order_items_by": "dateStart",
+                "order_items_sort": "desc"
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "date": {
+                        "year": 2028,
+                        "month": 5
+                    },
+                    "preview": {
+                        "links": [],
+                        "screenshots": [],
+                        "screenshotsAspectRatio": "",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Graduation",
+                            "text": "will be graduated at KSR on 2028"
+                        },
+                        "ta": {
+                            "title": "பட்டமளிப்பு",
+                            "text": "2028 இல் KSR இல் பட்டம் பெறுவார்"
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "date": {
+                        "year": 2024,
+                        "month": 5
+                    },
+                    "preview": {
+                        "links": [],
+                        "screenshots": [],
+                        "screenshotsAspectRatio": "",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Completed Schooling",
+                            "text": "completed schlooings on 2024"
+                        },
+                        "ta": {
+                            "title": "பள்ளிப்படிப்பு முடிந்தது",
+                            "text": "2024 இல் பள்ளிப்படிப்பை முடித்தார்"
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "date": {
+                        "year": 2017,
+                        "month": 1
+                    },
+                    "preview": {
+                        "links": [],
+                        "screenshots": [],
+                        "screenshotsAspectRatio": "",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Chasing Passion",
+                            "text": "starts chasing passion on 2017 at Bharath Mahal"
+                        },
+                        "ta": {
+                            "title": "ஆர்வத்தைத் துரத்துதல்",
+                            "text": "2017 இல் பாரத் மஹாலில் ஆர்வத்தைத் துரத்தத் தொடங்கினார்"
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "date": {
+                        "year": 2012,
+                        "month": 6
+                    },
+                    "preview": {
+                        "links": [],
+                        "screenshots": [],
+                        "screenshotsAspectRatio": "",
+                        "youtubeVideo": ""
+                    },
+                    "locales": {
+                        "en": {
+                            "title": "Started Schooling",
+                            "text": "starting schoolings at 2012."
+                        },
+                        "ta": {
+                            "title": "பள்ளிப்படிப்பு தொடங்கியது",
+                            "text": "2012 இல் பள்ளிப்படிப்பைத் தொடங்கினார்."
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

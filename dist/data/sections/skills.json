@@ -1,0 +1,262 @@
+{
+    "title": {
+        "locales": {
+            "en": {
+                "title_short": "Skills",
+                "title_short_nav": "Skills",
+                "title_long_prefix": "Explore",
+                "title_long": "My {{Skill Set}}"
+            },
+            "ta": {
+                "title_short": "திறன்கள்",
+                "title_short_nav": "திறன்கள்",
+                "title_long_prefix": "ஆராய்க",
+                "title_long": "என் {{திறன் தொகுப்பு}}"
+            }
+        }
+    },
+    "articles": [
+        {
+            "id": 1,
+            "component": "ArticleSkills",
+            "locales": {
+                "en": {
+                    "title": "Programming Languages"
+                },
+                "ta": {
+                    "title": "நிரலாக்க மொழிகள்"
+                }
+            },
+            "settings": {
+                "max_items_per_row": 3,
+                "max_rows_collapse_threshold": 6,
+                "order_items_by": "percentage",
+                "order_items_sort": "desc",
+                "round_icons": false
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "",
+                    "faIcon": "fa-brands fa-java",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": "#0295c2",
+                        "fillLight": "#007396"
+                    },
+                    "percentage": 25,
+                    "locales": {
+                        "en": {
+                            "title": "Java",
+                            "text": "Oracle certified Java developer with a strong understanding of its ecosystem.",
+                            "level": ""
+                        },
+                        "ta": {
+                            "title": "Java",
+                            "text": "Java சுற்றுச்சூழல் அமைப்பைப் பற்றிய வலுவான புரிதலைக் கொண்ட Oracle சான்றளிக்கப்பட்ட Java டெவலப்பர்.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "img": "",
+                    "faIcon": "fa-brands fa-python",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": "#306998"
+                    },
+                    "percentage": 25,
+                    "locales": {
+                        "en": {
+                            "title": "Python",
+                            "text": "Data analysis and machine learning with Python.",
+                            "level": ""
+                        },
+                        "ta": {
+                            "title": "Python",
+                            "text": "Python உடன் தரவு பகுப்பாய்வு மற்றும் இயந்திர கற்றல்.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "img": "",
+                    "faIcon": "fa-solid fa-c",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": "#00599C"
+                    },
+                    "percentage": 25,
+                    "locales": {
+                        "en": {
+                            "title": "C++",
+                            "text": "Strong understanding of C++ for system programming.",
+                            "level": ""
+                        },
+                        "ta": {
+                            "title": "C++",
+                            "text": "கணினி நிரலாக்கத்திற்கான C++ பற்றிய வலுவான புரிதல்.",
+                            "level": ""
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "component": "ArticleSkills",
+            "locales": {
+                "en": {
+                    "title": "Web Technologies"
+                },
+                "ta": {
+                    "title": "வலை தொழில்நுட்பங்கள்"
+                }
+            },
+            "settings": {
+                "max_items_per_row": 3,
+                "max_rows_collapse_threshold": 6,
+                "order_items_by": "percentage",
+                "order_items_sort": "desc",
+                "round_icons": false
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "",
+                    "faIcon": "fa-brands fa-html5",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": "#E34F26"
+                    },
+                    "percentage": 90,
+                    "locales": {
+                        "en": {
+                            "title": "HTML 5",
+                            "text": "I am proficient in HTML5 for building structured web pages.",
+                            "level": ""
+                        },
+                        "ta": {
+                            "title": "HTML 5",
+                            "text": "கட்டமைக்கப்பட்ட வலைப் பக்கங்களை உருவாக்க HTML5 இல் நான் திறமையானவன்.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 2,
+                    "img": "",
+                    "faIcon": "fa-brands fa-css3-alt",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": "#1572B6"
+                    },
+                    "percentage": 75,
+                    "locales": {
+                        "en": {
+                            "title": "CSS 3",
+                            "text": "I can create responsive and visually appealing designs using CSS3.",
+                            "level": ""
+                        },
+                        "ta": {
+                            "title": "CSS 3",
+                            "text": "CSS3 ஐப் பயன்படுத்தி பதிலளிக்கக்கூடிய மற்றும் பார்வைக்கு ஈர்க்கும் வடிவமைப்புகளை உருவாக்க முடியும்.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 3,
+                    "img": "",
+                    "faIcon": "fa-brands fa-js",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": "#F7DF1E",
+                        "fillLight": "#a69617"
+                    },
+                    "percentage": 50,
+                    "locales": {
+                        "en": {
+                            "title": "JavaScript",
+                            "text": "Mastered JavaScript ES6+ for dynamic and interactive web applications.",
+                            "level": ""
+                        },
+                        "ta": {
+                            "title": "JavaScript",
+                            "text": "மாறும் மற்றும் ஊடாடும் வலை பயன்பாடுகளுக்கு JavaScript ES6+ ஐ освоил.",
+                            "level": ""
+                        }
+                    }
+                },
+                {
+                    "id": 4,
+                    "img": "",
+                    "faIcon": "fa-brands fa-react",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": "#61DAFB",
+                        "fillLight": "#317385"
+                    },
+                    "percentage": 25,
+                    "locales": {
+                        "en": {
+                            "title": "React JS",
+                            "text": "Complete understanding of React for building modern web applications.",
+                            "level": ""
+                        },
+                        "ta": {
+                            "title": "React JS",
+                            "text": "நவீன வலை பயன்பாடுகளை உருவாக்க React பற்றிய முழுமையான புரிதல்.",
+                            "level": ""
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "component": "ArticleSkills",
+            "locales": {
+                "en": {
+                    "title": "Database"
+                },
+                "ta": {
+                    "title": "தரவுதளம்"
+                }
+            },
+            "settings": {
+                "max_items_per_row": 3,
+                "max_rows_collapse_threshold": 6,
+                "order_items_by": "percentage",
+                "order_items_sort": "desc",
+                "round_icons": false
+            },
+            "items": [
+                {
+                    "id": 1,
+                    "img": "",
+                    "faIcon": "fa-solid fa-server",
+                    "faIconColors": {
+                        "bg": "",
+                        "fill": "#47A248"
+                    },
+                    "percentage": 25,
+                    "locales": {
+                        "en": {
+                            "title": "MongoDB",
+                            "text": "NoSQL database management with MongoDB.",
+                            "level": ""
+                        },
+                        "ta": {
+                            "title": "MongoDB",
+                            "text": "MongoDB உடன் NoSQL தரவுத்தள மேலாண்மை.",
+                            "level": ""
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

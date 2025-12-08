@@ -22,8 +22,6 @@ import RocketLaunch from "/src/components/RocketLaunch.jsx"
 import GitHubActivityFeed from "/src/components/GitHubActivityFeed.jsx"
 import ScrollProgress from "/src/components/ScrollProgress.jsx"
 
-/** Initialization Script... **/
-createRoot(document.getElementById('root')).render(<App />)
 
 /**
  * This is the main app component. It wraps the content of the app with AppEssentialsWrapper and AppCapabilitiesWrapper.
@@ -194,3 +192,7 @@ const AppCapabilitiesWrapper = ({ children }) => {
         </LanguageProvider>
     )
 }
+
+/** Initialization Script... **/
+createRoot(document.getElementById('root')).render(<App />)
+
